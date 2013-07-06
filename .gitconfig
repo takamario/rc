@@ -1,0 +1,13 @@
+[user]
+  name = Shoei Takamaru
+[core]
+  editor = /usr/bin/vim
+[alias]
+  co = checkout
+  ci = commit -a
+  st = status
+  br = branch
+  lg = log --abbrev-commit --relative-date --decorate --pretty
+  lgg = log --abbrev-commit --relative-date --decorate --pretty --graph
+[color]
+  ui = auto
