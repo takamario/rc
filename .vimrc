@@ -73,10 +73,6 @@ function! s:remove_dust()
 endfunction
 autocmd BufWritePre * call <SID>remove_dust()
 
-autocmd FileType python call s:python_settings()
-function! s:python_settings()
-  autocmd BufWritePost <buffer> call Flake8()
-endfunction
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
