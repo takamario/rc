@@ -2,6 +2,7 @@
   name = Shoei Takamaru
 [core]
   editor = /usr/bin/vim
+  autocrlf = input
 [alias]
   co = checkout
   ci = commit -a
