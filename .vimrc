@@ -28,29 +28,28 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 
 execute pathogen#infect()
 filetype plugin indent on
-filetype indent plugin on
 NeoBundleCheck
 
 syntax enable
 set background=dark
 colorscheme solarized
 set autoindent
+set cursorline
 set expandtab
 set hidden
 set hlsearch
 set incsearch
 set ignorecase
 set laststatus=2
-set nocompatible
 set nostartofline
 set number
 set ruler
 set shiftwidth=2
 set showcmd
+set showmatch
 set smartcase
 set softtabstop=2
 set wildmenu
-set cursorline
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
