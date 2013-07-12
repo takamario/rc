@@ -9,6 +9,8 @@
   st = status
   br = branch
   lg = log --abbrev-commit --relative-date --decorate --pretty
-  lgg = log --abbrev-commit --relative-date --decorate --pretty --graph
+  lgg = log --abbrev-commit --relative-date --decorate --pretty --graph --line
 [color]
   ui = auto
+[push]
+  default = simple
