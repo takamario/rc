@@ -15,4 +15,4 @@ alias less='less -R'
 
 # git
 export GIT_EDITOR=vim
-PS1='[\u@\h \W$(__git_ps1 "(%s)")]$ '
+PS1='[\u:\W$(__git_ps1 "(%s)")]$ '
