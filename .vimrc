@@ -25,6 +25,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 execute pathogen#infect()
 filetype plugin indent on
@@ -52,13 +53,13 @@ set softtabstop=2
 set wildmenu
 
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup=0
 " Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup=1
 " Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_smart_case=1
 " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length=3
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
@@ -76,3 +77,4 @@ autocmd BufWritePre * call <SID>remove_dust()
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+let g:indent_guides_enable_on_vim_startup=1
