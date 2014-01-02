@@ -7,8 +7,8 @@ alias less='less -R'
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# pythonbrew
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+# pyenv
+eval "$(pyenv init -)"
 
 # nvm
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . $HOME/.nvm/nvm.sh
