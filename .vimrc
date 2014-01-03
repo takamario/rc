@@ -26,6 +26,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'vim-ruby/vim-ruby'
 
 execute pathogen#infect()
 filetype plugin indent on
