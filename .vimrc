@@ -40,8 +40,8 @@ set cursorline
 set expandtab
 set hidden
 set hlsearch
-set incsearch
 set ignorecase
+set incsearch
 set laststatus=2
 set nostartofline
 set number
