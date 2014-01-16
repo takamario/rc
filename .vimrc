@@ -85,3 +85,4 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+autocmd FileType javascript setl ts=2 sw=2 softtabstop=2 expandtab textwidth=80 colorcolumn=+1
