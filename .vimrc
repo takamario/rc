@@ -16,6 +16,7 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'othree/html5.vim'
@@ -87,4 +88,5 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
-autocmd FileType javascript setl ts=2 sw=2 softtabstop=2 expandtab textwidth=80 colorcolumn=+1
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType coffee setl ts=2 sw=2 softtabstop=2 expandtab textwidth=80 colorcolumn=+1
