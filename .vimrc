@@ -1,10 +1,15 @@
 set nocompatible
 
 if has('vim_starting')
+  if &compatible
+    set nocompatible
+  endif
+
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 let g:NERDTreeDirArrows=0
 
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -38,6 +43,8 @@ NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-ruby/vim-ruby'
+
+call neobundle#end()
 
 execute pathogen#infect()
 filetype plugin indent on
