@@ -14,7 +14,16 @@ let g:NERDTreeDirArrows=0
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache.vim'
-NeoBundle 'Shougo/vimproc'
+
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'digitaltoad/vim-jade'
