@@ -3,6 +3,7 @@
 [core]
   editor = /usr/bin/vim
   autocrlf = input
+  pager = less -r
 [alias]
   co = checkout
   ci = commit -a
