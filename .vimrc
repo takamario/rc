@@ -63,7 +63,9 @@ syntax enable
 set background=dark
 colorscheme solarized
 set autoindent
+"set backspace=indent,eol,start
 set cursorline
+set encoding=utf-8
 set expandtab
 set hidden
 set hlsearch
