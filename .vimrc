@@ -26,23 +26,26 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'lukaszkorecki/CoffeeTags'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'ngmy/vim-rubocop'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-git'
@@ -90,6 +93,9 @@ let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length=3
+
+" rubocop
+let g:vimrubocop_config='~/.rubocop.yml'
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
