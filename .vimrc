@@ -38,7 +38,6 @@ NeoBundle 'lukaszkorecki/CoffeeTags'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'ngmy/vim-rubocop'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
@@ -95,7 +94,7 @@ let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
 
 " rubocop
-let g:vimrubocop_config='~/.rubocop.yml'
+let g:syntastic_ruby_checkers = ['rubocop']
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
