@@ -31,12 +31,13 @@ NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'groenewege/vim-less'
+NeoBundle 'hashivim/vim-terraform'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'lukaszkorecki/CoffeeTags'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'othree/html5.vim'
@@ -95,6 +96,10 @@ let g:neocomplcache_min_syntax_length=3
 
 " rubocop
 let g:syntastic_ruby_checkers = ['rubocop']
+" flake8
+let g:syntastic_python_checkers = ['flake8']
+" eslint
+let g:syntastic_javascript_checkers = ['eslint']
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
@@ -118,4 +123,6 @@ let g:indent_guides_guide_size=1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 autocmd FileType coffee setl ts=2 sw=2 softtabstop=2 expandtab textwidth=80 colorcolumn=+1
