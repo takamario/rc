@@ -29,6 +29,7 @@ NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'hashivim/vim-terraform'
@@ -54,6 +55,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-erlang/vim-erlang-runtime'
 NeoBundle 'vim-ruby/vim-ruby'
 
 call neobundle#end()
@@ -98,8 +100,12 @@ let g:neocomplcache_min_syntax_length=3
 let g:syntastic_ruby_checkers = ['rubocop']
 " flake8
 let g:syntastic_python_checkers = ['flake8']
+" html
+let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "for']
 " eslint
 let g:syntastic_javascript_checkers = ['eslint']
+" golint
+let g:syntastic_go_checkers = ['govet', 'errcheck']
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
