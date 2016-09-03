@@ -105,7 +105,7 @@ let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "for']
 " eslint
 let g:syntastic_javascript_checkers = ['eslint']
 " golint
-let g:syntastic_go_checkers = ['govet', 'errcheck']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
