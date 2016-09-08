@@ -24,7 +24,6 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ }
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
@@ -66,7 +65,8 @@ NeoBundleCheck
 
 syntax enable
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme molokai
 set autoindent
 "set backspace=indent,eol,start
 set cursorline
@@ -128,7 +128,7 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 autocmd FileType coffee setl ts=2 sw=2 softtabstop=2 expandtab textwidth=80 colorcolumn=+1
