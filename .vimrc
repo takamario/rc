@@ -66,7 +66,12 @@ NeoBundleCheck
 syntax enable
 set background=dark
 "colorscheme solarized
-colorscheme molokai
+"colorscheme molokai
+"colorscheme codeschool
+"colorscheme hybrid
+"colorscheme Tomorrow-Night
+"colorscheme lucius
+"colorscheme Monokai
 set autoindent
 "set backspace=indent,eol,start
 set cursorline
