@@ -54,6 +54,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-erlang/vim-erlang-runtime'
 NeoBundle 'vim-ruby/vim-ruby'
 
