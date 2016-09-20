@@ -112,7 +112,6 @@ let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "for']
 let g:syntastic_javascript_checkers = ['eslint']
 " golint
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_fmt_command = "goimports"
 
 autocmd vimenter * if !argc() | NERDTree | endif
