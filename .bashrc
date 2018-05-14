@@ -4,6 +4,8 @@ alias grep='grep --color'
 alias diff='colordiff'
 alias less='less -R'
 
+export LANG='en_US.utf-8'
+
 # rbenv
 eval "$(rbenv init -)"
 
@@ -15,4 +17,6 @@ eval "$(pyenv init -)"
 
 # git
 export GIT_EDITOR=vim
-PS1='[\u:\W$(__git_ps1 "(%s)")]$ '
+source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+PS1='[\u@\h:\W$(__git_ps1 "(%s)")]\$ '
