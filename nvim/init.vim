@@ -31,7 +31,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('itchyny/vim-parenmatch')
   call dein#add('jacoborus/tender.vim')
   call dein#add('juliosueiras/vim-terraform-completion')
-  call dein#add('kchmck/vim-coffee-script')
   call dein#add('kien/ctrlp.vim')
   call dein#add('majutsushi/tagbar')
   call dein#add('maksimr/vim-jsbeautify')
@@ -42,6 +41,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('pangloss/vim-javascript')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('posva/vim-vue')
+  call dein#add('prettier/vim-prettier')
   call dein#add('rking/ag.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('scrooloose/syntastic')
@@ -115,7 +115,15 @@ let g:syntastic_javascript_checkers = ['eslint']
 " golint
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_fmt_command = "goimports"
-
+" php
+let g:syntastic_mode_map = {
+  \ 'mode': 'active',
+  \ 'active_filetypes': ['php']
+  \ }
+let g:syntastic_php_checkers = ['phpcs']
+if filereadable(expand('./ruleset.xml'))
+  let g:syntastic_php_phpcs_args='--standard=ruleset.xml'
+endif
 let g:indentLine_faster = 1
 let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 
@@ -142,3 +150,4 @@ autocmd BufWritePre * call <SID>remove_dust()
 "let g:indent_guides_guide_size=1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+autocmd FileType php setl ts=4 sw=4 sts=4 et
