@@ -17,6 +17,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Yggdroot/indentLine')
+  call dein#add('airblade/vim-gitgutter')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('cakebaker/scss-syntax.vim')
   call dein#add('cespare/vim-toml')
@@ -31,6 +32,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('itchyny/vim-parenmatch')
   call dein#add('jacoborus/tender.vim')
   call dein#add('juliosueiras/vim-terraform-completion')
+  call dein#add('junegunn/fzf')
+  call dein#add('junegunn/fzf.vim')
   call dein#add('kien/ctrlp.vim')
   call dein#add('majutsushi/tagbar')
   call dein#add('maksimr/vim-jsbeautify')
@@ -44,18 +47,21 @@ if dein#load_state('~/.cache/dein')
   call dein#add('prettier/vim-prettier')
   call dein#add('rking/ag.vim')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('scrooloose/syntastic')
   call dein#add('sickill/vim-monokai')
   call dein#add('slim-template/vim-slim')
+  call dein#add('szw/vim-tags')
+  call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-endwise')
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-git')
   call dein#add('tpope/vim-markdown')
   call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-erlang/vim-erlang-runtime')
   call dein#add('vim-ruby/vim-ruby')
+  call dein#add('w0rp/ale')
   call dein#add('zchee/deoplete-go', {'build': 'make'})
 
   call dein#end()
@@ -102,48 +108,34 @@ set wildmenu
 " Disable AutoComplPop.
 let g:acp_enableAtStartup=0
 
-" rubocop
-let g:syntastic_ruby_checkers = ['rubocop', 'reek']
-let g:syntastic_slim_checkers = ['slim_lint']
-" flake8
-let g:syntastic_python_checkers = ['flake8']
-" html
-let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "for']
-let g:syntastic_scss_checkers = ['scss_lint']
-" eslint
-let g:syntastic_javascript_checkers = ['eslint']
-" golint
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" ale
+let g:ale_linters = {
+  \ 'ruby': ['rubocop', 'reek'],
+  \ 'slim': ['slim_lint'],
+  \ 'scss': ['scss_lint'],
+  \ 'javascript': ['eslint'],
+  \ 'python': ['flake8'],
+  \ 'go': ['golint', 'govet', 'errcheck'],
+  \ 'php': ['phpcs']
+  \}
+let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace']
+  \}
+let g:ale_fix_on_save = 1
+
+" gofmt
 let g:go_fmt_command = "goimports"
-" php
-let g:syntastic_mode_map = {
-  \ 'mode': 'active',
-  \ 'active_filetypes': ['php']
-  \ }
-let g:syntastic_php_checkers = ['phpcs']
-if filereadable(expand('./ruleset.xml'))
-  let g:syntastic_php_phpcs_args='--standard=ruleset.xml'
-endif
 let g:indentLine_faster = 1
 let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 
 let g:deoplete#enable_at_startup = 1
 
+let g:vim_tags_ctags_binary = '/usr/local/bin/ctags'
+
 " Terraform
 let g:terraform_fmt_on_save = 1
 
 autocmd vimenter * if !argc() | NERDTree | endif
-
-function! s:remove_dust()
-  let cursor = getpos(".")
-  " Remove trailing spaces
-  %s/\s\+$//ge
-  " Replace TAB => 2 spaces (if you want)
-  "%s/\t/  /ge
-  call setpos(".", cursor)
-  unlet cursor
-endfunction
-autocmd BufWritePre * call <SID>remove_dust()
 
 "let g:indent_guides_enable_on_vim_startup=1
 "let g:indent_guides_start_level=2
