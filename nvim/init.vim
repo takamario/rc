@@ -32,9 +32,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('itchyny/vim-parenmatch')
   call dein#add('jacoborus/tender.vim')
   call dein#add('juliosueiras/vim-terraform-completion')
-  call dein#add('junegunn/fzf')
-  call dein#add('junegunn/fzf.vim')
-  call dein#add('kien/ctrlp.vim')
+  call dein#add('junegunn/fzf', {'build': './install --all', 'merged': 0})
+  call dein#add('junegunn/fzf.vim', {'depends': 'fzf'})
   call dein#add('majutsushi/tagbar')
   call dein#add('maksimr/vim-jsbeautify')
   call dein#add('mustache/vim-mustache-handlebars')
@@ -45,7 +44,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('posva/vim-vue')
   call dein#add('prettier/vim-prettier')
-  call dein#add('rking/ag.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('sickill/vim-monokai')
   call dein#add('slim-template/vim-slim')
@@ -119,7 +117,10 @@ let g:ale_linters = {
   \ 'php': ['phpcs']
   \}
 let g:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace']
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'ruby': ['rubocop'],
+  \ 'javascript': ['eslint'],
+  \ 'python': ['flake8']
   \}
 let g:ale_fix_on_save = 1
 
@@ -131,6 +132,9 @@ let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 let g:deoplete#enable_at_startup = 1
 
 let g:vim_tags_ctags_binary = '/usr/local/bin/ctags'
+
+" fzf
+nnoremap <C-p> :Files<CR>
 
 " Terraform
 let g:terraform_fmt_on_save = 1
