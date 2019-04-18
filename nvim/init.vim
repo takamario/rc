@@ -114,13 +114,16 @@ let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'python': ['flake8'],
   \ 'go': ['golint', 'govet', 'errcheck'],
-  \ 'php': ['phpcs']
+  \ 'php': ['phpcs'],
+  \ 'yaml': ['yamllint']
   \}
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'ruby': ['rubocop'],
-  \ 'javascript': ['eslint'],
-  \ 'python': ['flake8']
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'css': ['prettier'],
+  \ 'python': ['flake8'],
+  \ 'yaml': ['prettier']
   \}
 let g:ale_fix_on_save = 1
 
