@@ -16,5 +16,6 @@ brew cask install \
   slack \
   spectacle \
   spotify \
+  tableplus \
   tunnelblick \
   vlc

@@ -19,7 +19,7 @@ eval "$(rbenv init -)"
 
 # pyenv
 eval "$(pyenv init -)"
-export PYENV_ROOT=/Users/takamario/.pyenv
+export PYENV_ROOT=$HOME/.pyenv
 
 # nvm
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . $HOME/.nvm/nvm.sh
