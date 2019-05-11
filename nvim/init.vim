@@ -122,7 +122,7 @@ let g:ale_fixers = {
   \ 'ruby': ['rubocop'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'css': ['prettier'],
-  \ 'python': ['flake8'],
+  \ 'python': ['autopep8'],
   \ 'yaml': ['prettier']
   \}
 let g:ale_fix_on_save = 1
