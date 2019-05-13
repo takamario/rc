@@ -1,5 +1,5 @@
 # aliases
-alias ls='ls -G -F'
+alias ls='ls -vGF'
 alias grep='grep --color'
 alias diff='colordiff'
 alias less='less -R'
@@ -8,6 +8,7 @@ alias view='nvim -R'
 alias dc='docker-compose'
 alias be='bundle exec'
 alias cat='bat'
+alias ctags="`brew --prefix`/bin/ctags"
 alias date='gdate'
 alias top='htop'
 alias sed='gsed'

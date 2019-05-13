@@ -34,6 +34,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('juliosueiras/vim-terraform-completion')
   call dein#add('junegunn/fzf', {'build': './install --all', 'merged': 0})
   call dein#add('junegunn/fzf.vim', {'depends': 'fzf'})
+  call dein#add('leafgarland/typescript-vim')
   call dein#add('majutsushi/tagbar')
   call dein#add('maksimr/vim-jsbeautify')
   call dein#add('mustache/vim-mustache-handlebars')
@@ -112,15 +113,18 @@ let g:ale_linters = {
   \ 'slim': ['slim_lint'],
   \ 'scss': ['scss_lint'],
   \ 'javascript': ['eslint'],
+  \ 'typescript': ['eslint'],
   \ 'python': ['flake8'],
   \ 'go': ['golint', 'govet', 'errcheck'],
   \ 'php': ['phpcs'],
-  \ 'yaml': ['yamllint']
+  \ 'yaml': ['yamllint'],
+  \ 'json': ['jsonlint']
   \}
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'ruby': ['rubocop'],
   \ 'javascript': ['prettier', 'eslint'],
+  \ 'typescript': ['prettier', 'eslint'],
   \ 'css': ['prettier'],
   \ 'python': ['autopep8'],
   \ 'yaml': ['prettier']
