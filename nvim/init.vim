@@ -16,7 +16,9 @@ if dein#load_state('~/.cache/dein')
   endif
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   "call dein#add('Yggdroot/indentLine')
+  call dein#add('Quramy/tsuquyomi')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('cakebaker/scss-syntax.vim')
@@ -124,6 +126,7 @@ let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'ruby': ['rubocop'],
   \ 'javascript': ['prettier', 'eslint'],
+  \ 'json': ['prettier'],
   \ 'typescript': ['prettier', 'eslint'],
   \ 'css': ['prettier'],
   \ 'python': ['autopep8'],
