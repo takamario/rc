@@ -129,7 +129,7 @@ let g:ale_fixers = {
   \ 'json': ['prettier'],
   \ 'typescript': ['prettier', 'eslint'],
   \ 'css': ['prettier'],
-  \ 'python': ['autopep8'],
+  \ 'python': ['black'],
   \ 'yaml': ['prettier']
   \}
 let g:ale_fix_on_save = 1
