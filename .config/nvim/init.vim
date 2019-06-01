@@ -23,6 +23,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('cakebaker/scss-syntax.vim')
   call dein#add('cespare/vim-toml')
+  call dein#add('cocopon/iceberg.vim')
   call dein#add('digitaltoad/vim-pug')
   call dein#add('ekalinin/Dockerfile.vim')
   call dein#add('elixir-lang/vim-elixir')
@@ -82,7 +83,8 @@ endif
 syntax enable
 set background=dark
 "colorscheme Monokai
-colorscheme tender
+"colorscheme tender
+colorscheme iceberg
 set ambiwidth=double
 set autoindent
 "set backspace=indent,eol,start
