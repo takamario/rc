@@ -114,8 +114,8 @@ let g:acp_enableAtStartup=0
 " ale
 let g:ale_linters = {
   \ 'ruby': ['rubocop', 'reek'],
-  \ 'slim': ['slim_lint'],
-  \ 'scss': ['scss_lint'],
+  \ 'slim': ['slimlint'],
+  \ 'scss': ['scsslint'],
   \ 'javascript': ['eslint'],
   \ 'typescript': ['eslint'],
   \ 'python': ['flake8'],
