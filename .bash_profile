@@ -1,6 +1,7 @@
 # aliases
 alias ls='ls -vGF'
-alias grep='grep --color'
+# alias grep='grep --color'
+alias grep='ag'
 alias diff='colordiff'
 alias less='less -R'
 alias vi='nvim'
