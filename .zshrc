@@ -26,7 +26,7 @@ export PYENV_ROOT=$HOME/.pyenv
 
 # git
 export GIT_EDITOR=nvim
-plugins=(… zsh-completions)
+plugins=(brew bundle git rails ruby yarn zsh-completions)
 autoload -U compinit && compinit
 setopt prompt_subst
 . /usr/local/etc/bash_completion.d/git-prompt.sh
