@@ -1,6 +1,5 @@
 # aliases
 alias ls='ls -vGF'
-# alias grep='grep --color'
 alias grep='ag'
 alias diff='colordiff'
 alias less='less -R'
@@ -25,14 +24,13 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 export PYENV_ROOT=$HOME/.pyenv
 
-# nvm
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . $HOME/.nvm/nvm.sh
-
 # git
 export GIT_EDITOR=nvim
-source /usr/local/etc/bash_completion.d/git-completion.bash
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-PS1='[\u@\h:\W$(__git_ps1 "(%s)")]\$ '
+plugins=(… zsh-completions)
+autoload -U compinit && compinit
+setopt prompt_subst
+. /usr/local/etc/bash_completion.d/git-prompt.sh
+export PROMPT='%n@%m %1~$(__git_ps1 "(%s)") %# '
 
 # fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

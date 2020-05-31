@@ -12,6 +12,7 @@
   pick = cherry-pick
   lg = log --abbrev-commit --relative-date --decorate --pretty
   lgg = log --abbrev-commit --relative-date --decorate --pretty --graph
+  lgol = log --abbrev-commit --relative-date --decorate --pretty --oneline
 [color]
   ui = auto
 [push]
