@@ -42,8 +42,7 @@ zstyle ':prezto:load' pmodule \
   'docker' \
   'git' \
   'rails' \
-  'ruby' \
-  'yarn'
+  'ruby'
 
 
 #
