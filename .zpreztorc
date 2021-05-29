@@ -14,6 +14,7 @@
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
+zstyle ':prezto:module:utility:ls' color 'no' # NOTE: For exa
 
 # Add additional directories to load prezto modules from
 # zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
@@ -232,20 +233,21 @@ zstyle ':prezto:module:prompt' theme 'paradox'
 # zstyle ':prezto:module:utility' safe-ops 'yes'
 
 # aliases
-alias ls='ls -vGF'
-alias grep='ag'
-alias diff='colordiff'
-alias less='less -R'
-alias vi='nvim'
-alias view='nvim -R'
-alias vimdiff='nvim -d'
-alias dc='docker-compose'
 alias be='bundle exec'
 alias cat='bat -p'
 alias ctags="`brew --prefix`/bin/ctags"
 alias date='gdate'
-alias top='htop'
+alias dc='docker compose'
+alias diff='colordiff'
+alias find='fd'
+alias grep='rg'
+alias less='less -R'
+alias ls='exa'
 alias sed='gsed'
+alias top='htop'
+alias vi='nvim'
+alias view='nvim -R'
+alias vimdiff='nvim -d'
 
 export LANG='en_US.utf-8'
 export CLOUDSDK_PYTHON=python3
@@ -254,8 +256,12 @@ export CLOUDSDK_PYTHON=python3
 eval "$(rbenv init -)"
 
 # pyenv
-eval "$(pyenv init -)"
 export PYENV_ROOT=$HOME/.pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+# nodenv
+eval "$(nodenv init -)"
 
 # git
 export GIT_EDITOR=nvim
@@ -268,3 +274,6 @@ if [ -f '/Users/takamario/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# PATH
+export PATH=$PATH:/usr/local/bin
