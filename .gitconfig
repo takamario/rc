@@ -13,6 +13,7 @@
   lg = log --abbrev-commit --relative-date --decorate --pretty
   lgg = log --abbrev-commit --relative-date --decorate --pretty --graph
   lgol = log --abbrev-commit --relative-date --decorate --pretty --oneline
+  sw = switch
 [color]
   ui = auto
 [push]
