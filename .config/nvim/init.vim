@@ -20,6 +20,7 @@ if dein#load_state('~/.cache/dein')
   "call dein#add('Yggdroot/indentLine')
   call dein#add('Quramy/tsuquyomi')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('beanworks/vim-phpfmt')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('cakebaker/scss-syntax.vim')
   call dein#add('cespare/vim-toml')
@@ -34,6 +35,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('itchyny/lightline.vim')
   call dein#add('itchyny/vim-parenmatch')
   call dein#add('jacoborus/tender.vim')
+  call dein#add('jremmen/vim-ripgrep')
   call dein#add('juliosueiras/vim-terraform-completion')
   call dein#add('junegunn/fzf', {'build': './install --all', 'merged': 0})
   call dein#add('junegunn/fzf.vim', {'depends': 'fzf'})
@@ -114,6 +116,7 @@ let g:acp_enableAtStartup=0
 " ale
 let g:ale_linters = {
   \ 'ruby': ['rubocop', 'reek'],
+  \ 'eruby': ['erb'],
   \ 'slim': ['slimlint'],
   \ 'scss': ['scsslint'],
   \ 'javascript': ['eslint'],
@@ -159,3 +162,4 @@ autocmd vimenter * if !argc() | NERDTree | endif
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 autocmd FileType php setl ts=4 sw=4 sts=4 et
+let g:phpfmt_standard = 'PSR2'
