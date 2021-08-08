@@ -1,18 +1,20 @@
 # aliases
-alias ls='ls -vGF'
-alias grep='ag'
-alias diff='colordiff'
-alias less='less -R'
-alias vi='nvim'
-alias view='nvim -R'
-alias vimdiff='nvim -d'
-alias dc='docker-compose'
+alias ag='rg'
 alias be='bundle exec'
 alias cat='bat -p'
 alias ctags="`brew --prefix`/bin/ctags"
 alias date='gdate'
-alias top='htop'
+alias dc='docker compose'
+alias diff='colordiff'
+alias find='fd'
+alias grep='rg'
+alias less='less -R'
+alias ls='exa'
 alias sed='gsed'
+alias top='htop'
+alias vi='nvim'
+alias view='nvim -R'
+alias vimdiff='nvim -d'
 
 export LANG='en_US.utf-8'
 export CLOUDSDK_PYTHON=python3
@@ -21,20 +23,25 @@ export CLOUDSDK_PYTHON=python3
 eval "$(rbenv init -)"
 
 # pyenv
-eval "$(pyenv init -)"
 export PYENV_ROOT=$HOME/.pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+# nodenv
+eval "$(nodenv init -)"
 
 # git
 export GIT_EDITOR=nvim
-plugins=(brew bundle git rails ruby yarn zsh-completions)
-autoload -U compinit && compinit
-setopt prompt_subst
-. /usr/local/etc/bash_completion.d/git-prompt.sh
 export PROMPT='%n@%m %1~$(__git_ps1 "(%s)") %# '
+
+# gcloud
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
+if [ -f '/Users/takamario/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/takamario/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/takamario/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/takamario/google-cloud-sdk/completion.zsh.inc'; fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# gcloud
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# PATH
+export PATH=$PATH:/usr/local/bin
