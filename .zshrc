@@ -1,3 +1,6 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # aliases
 alias ag='rg'
 alias be='bundle exec'
@@ -32,7 +35,7 @@ eval "$(nodenv init -)"
 
 # git
 export GIT_EDITOR=nvim
-export PROMPT='%n@%m %1~$(__git_ps1 "(%s)") %# '
+# export PROMPT='%n@%m %1~$(__git_ps1 "(%s)") %# '
 
 # gcloud
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"; fi
