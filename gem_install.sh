@@ -7,5 +7,6 @@ gem install -N \
   reek \
   rubocop \
   rubocop-performance \
-  scss_lint \
+  rubocop-rails \
+  rubocop-rake \
   slim_lint
