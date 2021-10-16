@@ -12,7 +12,8 @@ alias diff='colordiff'
 alias find='fd'
 alias grep='rg'
 alias less='less -R'
-alias ls='exa'
+alias ls='exa -g --git'
+alias ps='procs'
 alias sed='gsed'
 alias top='htop'
 alias vi='nvim'
@@ -33,9 +34,13 @@ eval "$(pyenv init --path)"
 # nodenv
 eval "$(nodenv init -)"
 
+# goenv
+export GOENV_ROOT=$HOME/.goenv
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+
 # git
 export GIT_EDITOR=nvim
-# export PROMPT='%n@%m %1~$(__git_ps1 "(%s)") %# '
 
 # gcloud
 if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"; fi
@@ -44,5 +49,5 @@ if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/complet
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# PATH
-export PATH=$PATH:/usr/local/bin
+# Go
+export GOPATH=$HOME/go
