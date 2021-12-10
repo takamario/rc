@@ -35,6 +35,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('itchyny/lightline.vim')
   call dein#add('itchyny/vim-parenmatch')
   call dein#add('jacoborus/tender.vim')
+  call dein#add('jparise/vim-graphql')
   call dein#add('jremmen/vim-ripgrep')
   call dein#add('juliosueiras/vim-terraform-completion')
   call dein#add('junegunn/fzf', {'build': './install --all', 'merged': 0})
@@ -117,11 +118,12 @@ let g:ale_linters = {
   \ 'ruby': ['rubocop', 'reek'],
   \ 'eruby': ['erb'],
   \ 'slim': ['slimlint'],
-  \ 'scss': ['scsslint'],
+  \ 'scss': ['stylelint'],
   \ 'javascript': ['eslint'],
   \ 'typescript': ['eslint'],
   \ 'python': ['flake8'],
   \ 'go': ['golint', 'govet', 'errcheck'],
+  \ 'graphql': ['eslint'],
   \ 'php': ['phpcs'],
   \ 'yaml': ['yamllint'],
   \ 'json': ['jsonlint']
@@ -132,7 +134,8 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier', 'eslint'],
   \ 'json': ['prettier'],
   \ 'typescript': ['prettier', 'eslint'],
-  \ 'css': ['prettier'],
+  \ 'css': ['prettier', 'stylelint'],
+  \ 'graphql': ['prettier', 'eslint'],
   \ 'python': ['black'],
   \ 'yaml': ['prettier']
   \}
@@ -162,3 +165,4 @@ hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 autocmd FileType php setl ts=4 sw=4 sts=4 et
 let g:phpfmt_standard = 'PSR2'
+let g:vim_markdown_folding_disabled = 1
