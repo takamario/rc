@@ -2,7 +2,6 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # aliases
-alias ag='rg'
 alias be='bundle exec'
 alias cat='bat -p'
 alias ctags="`brew --prefix`/bin/ctags"
