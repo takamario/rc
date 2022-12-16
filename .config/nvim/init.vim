@@ -48,6 +48,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('nvie/vim-flake8')
   call dein#add('othree/html5.vim')
   call dein#add('pangloss/vim-javascript')
+  call dein#add('peitalin/vim-jsx-typescript')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('posva/vim-vue')
   call dein#add('prettier/vim-prettier')
@@ -120,6 +121,7 @@ let g:ale_linters = {
   \ 'slim': ['slimlint'],
   \ 'scss': ['stylelint'],
   \ 'javascript': ['eslint'],
+  \ 'javascriptreact': ['eslint'],
   \ 'typescript': ['eslint'],
   \ 'typescriptreact': ['eslint'],
   \ 'python': ['flake8'],
@@ -133,10 +135,12 @@ let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'ruby': ['rubocop'],
   \ 'javascript': ['prettier', 'eslint'],
+  \ 'javascriptreact': ['prettier', 'eslint'],
   \ 'json': ['prettier'],
   \ 'typescript': ['prettier', 'eslint'],
   \ 'typescriptreact': ['prettier', 'eslint'],
   \ 'css': ['prettier', 'stylelint'],
+  \ 'scss': ['prettier', 'stylelint'],
   \ 'graphql': ['prettier', 'eslint'],
   \ 'python': ['black'],
   \ 'yaml': ['prettier']
