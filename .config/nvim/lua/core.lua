@@ -22,4 +22,4 @@ opt.smartcase = true
 opt.softtabstop = 2
 opt.wildmenu = true
 
-vim.cmd [[colorscheme nordfox]]
+vim.cmd([[colorscheme nordfox]])

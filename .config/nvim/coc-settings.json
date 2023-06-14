@@ -1,5 +1,5 @@
 {
   "coc.preferences.formatOnSave": true,
   "Lua.diagnostics.globals": ["vim"],
-  "stylua.configPath": "$HOME/.config/stylua/stylua.toml"
+  "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml"
 }
