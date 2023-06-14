@@ -1,6 +1,10 @@
 -- <leader>
 vim.g.mapleader = " "
 
+-- buffer
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
+
 -- nvim-tree
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
 
