@@ -45,4 +45,5 @@ return require("packer").startup(function(use)
     end,
     requires = { "kkharji/sqlite.lua" },
   })
+  use("bronson/vim-trailing-whitespace")
 end)
