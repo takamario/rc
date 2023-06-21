@@ -1,5 +1,8 @@
 {
   "coc.preferences.formatOnSave": true,
   "Lua.diagnostics.globals": ["vim"],
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
   "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml"
 }
