@@ -20,8 +20,12 @@ require("nvim-tree").setup({
 })
 require("nvim-web-devicons").setup()
 local function open_nvim_tree(data)
-  local directory = vim.fn.isdirectory(data.file) == 1
+  if not data[0] then
+    require("nvim-tree.api").tree.open()
+    return
+  end
 
+  local directory = vim.fn.isdirectory(data.file) == 1
   if not directory then
     return
   end
