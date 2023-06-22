@@ -4,5 +4,6 @@
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "solargraph.hover": true,
-  "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml"
+  "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml",
+  "stylua.styluaPath": "/opt/homebrew/bin/stylua"
 }
