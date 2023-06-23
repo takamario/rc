@@ -44,21 +44,20 @@ require("nvim-tree").setup({
 })
 require("nvim-web-devicons").setup()
 local function open_nvim_tree(data)
-  if not data[0] then
-    require("nvim-tree.api").tree.open()
-    return
-  end
-
+  local real_file = vim.fn.filereadable(data.file) == 1
+  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
   local directory = vim.fn.isdirectory(data.file) == 1
-  if not directory then
-    return
+
+  if not real_file and not no_name then
+    if not directory then
+      return
+    end
+    vim.cmd.enew()
+    vim.cmd.bw(data.buf)
+    vim.cmd.cd(data.file)
   end
 
-  vim.cmd.enew()
-  vim.cmd.bw(data.buf)
-  vim.cmd.cd(data.file)
-
-  require("nvim-tree.api").tree.open()
+  require("nvim-tree.api").tree.toggle({ focus = false })
 end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
