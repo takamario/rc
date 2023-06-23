@@ -29,4 +29,5 @@ return require("packer").startup(function(use)
     requires = { "kkharji/sqlite.lua" },
   })
   use("ntpeters/vim-better-whitespace")
+  use("tpope/vim-fugitive")
 end)
