@@ -44,7 +44,7 @@ require("nvim-tree").setup({
 })
 require("nvim-web-devicons").setup()
 local function open_nvim_tree(data)
-  local real_file = vim.fn.filereadable(data.file) == 1
+  local real_file = vim.fn.filereadable(data.file) == 1 and not string.find(data.file, "COMMIT_EDITMSG")
   local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
   local directory = vim.fn.isdirectory(data.file) == 1
 
