@@ -29,5 +29,12 @@ return require("packer").startup(function(use)
     requires = { "kkharji/sqlite.lua" },
   })
   use("ntpeters/vim-better-whitespace")
+  use("sindrets/diffview.nvim")
   use("tpope/vim-fugitive")
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  })
 end)
