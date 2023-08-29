@@ -1,9 +1,33 @@
 {
   "coc.preferences.formatOnSave": true,
+  "diagnostic-languageserver.filetypes": { "dockerfile": "hadolint" },
+  "eslint.autoFixOnSave": true,
   "Lua.diagnostics.globals": ["vim"],
-  "solargraph.diagnostics": true,
-  "solargraph.formatting": true,
-  "solargraph.hover": true,
   "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml",
-  "stylua.styluaPath": "/opt/homebrew/bin/stylua"
+  "stylua.styluaPath": "/opt/homebrew/bin/stylua",
+  "languageserver": {
+    "ruby-lsp": {
+      "command": "ruby-lsp",
+      "initializationOptions": {
+        "experimentalFeaturesEnabled": false,
+        "enabledFeatures": [
+          "codeActions",
+          "diagnostics",
+          "documentHighlights",
+          "documentLink",
+          "documentSymbols",
+          "foldingRanges",
+          "formatting",
+          "hover",
+          "inlayHint",
+          "onTypeFormatting",
+          "selectionRanges",
+          "semanticHighlighting",
+          "completion"
+        ],
+        "formatter": "auto"
+      },
+      "filetypes": ["ruby"]
+    }
+  }
 }
