@@ -1,10 +1,11 @@
 {
   "coc.preferences.formatOnSave": true,
-  "Lua.diagnostics.globals": ["vim"],
   "diagnostic-languageserver.filetypes": { "dockerfile": "hadolint" },
   "eslint.autoFixOnSave": true,
+  "Lua.diagnostics.globals": ["vim"],
   "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml",
   "stylua.styluaPath": "/opt/homebrew/bin/stylua",
+  "tailwindCSS.custom.serverPath": "/opt/homebrew/bin/tailwindcss-language-server",
   "yaml.format.enable": true,
   "languageserver": {
     "ruby-lsp": {
