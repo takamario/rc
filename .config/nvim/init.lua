@@ -101,3 +101,25 @@ end,
 vim.g.better_whitespace_enabled = true
 vim.g.strip_whitespace_on_save = true
 vim.g.strip_whitespace_confirm = false
+
+-- copilot
+require("CopilotChat").setup({
+  debug = true,
+})
+function CopilotChatBuffer()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end
+vim.api.nvim_set_keymap("n", "<leader>ccq", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
+function ShowCopilotChatActionPrompt()
+  local actions = require("CopilotChat.actions")
+  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ccp",
+  "<cmd>lua ShowCopilotChatActionPrompt()<cr>",
+  { noremap = true, silent = true }
+)

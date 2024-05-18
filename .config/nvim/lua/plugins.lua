@@ -37,4 +37,11 @@ return require("packer").startup(function(use)
       vim.fn["mkdp#util#install"]()
     end,
   })
+  use("slim-template/vim-slim")
+  use({
+    "CopilotC-Nvim/CopilotChat.nvim",
+    requires = { "zbirenbaum/copilot.lua", "nvim-lua/plenary.nvim" },
+    tag = "canary",
+    opts = { debug = true },
+  })
 end)
