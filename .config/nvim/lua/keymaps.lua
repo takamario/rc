@@ -15,3 +15,27 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<C-f>", ":Telescope frecency<CR>", {})
+
+-- copilot
+function CopilotChatBuffer()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ccq",
+  "<cmd>lua CopilotChatBuffer()<cr>",
+  { noremap = true, silent = true, desc = "CopilotChat - Quick chat" }
+)
+function ShowCopilotChatActionPrompt()
+  local actions = require("CopilotChat.actions")
+  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ccp",
+  "<cmd>lua ShowCopilotChatActionPrompt()<cr>",
+  { noremap = true, silent = true, desc = "CopilotChat - Action prompt" }
+)

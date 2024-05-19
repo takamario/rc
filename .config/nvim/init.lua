@@ -40,6 +40,10 @@ vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup({
   filters = {
     dotfiles = true,
+    git_ignored = false,
+  },
+  view = {
+    width = 40,
   },
 })
 require("nvim-web-devicons").setup()
@@ -73,6 +77,9 @@ require("fidget").setup({})
 require("gitsigns").setup()
 require("lualine").setup()
 require("nvim-surround").setup({})
+require("CopilotChat").setup({
+  debug = true,
+})
 
 -- require("mason").setup()
 
@@ -102,24 +109,11 @@ vim.g.better_whitespace_enabled = true
 vim.g.strip_whitespace_on_save = true
 vim.g.strip_whitespace_confirm = false
 
--- copilot
-require("CopilotChat").setup({
-  debug = true,
+-- rust.nvim
+vim.g.rustfmt_autosave = 1
+
+-- coc-go
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.go" },
+  command = "call CocAction('runCommand', 'editor.action.organizeImport')",
 })
-function CopilotChatBuffer()
-  local input = vim.fn.input("Quick Chat: ")
-  if input ~= "" then
-    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
-  end
-end
-vim.api.nvim_set_keymap("n", "<leader>ccq", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
-function ShowCopilotChatActionPrompt()
-  local actions = require("CopilotChat.actions")
-  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-end
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ccp",
-  "<cmd>lua ShowCopilotChatActionPrompt()<cr>",
-  { noremap = true, silent = true }
-)

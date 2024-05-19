@@ -38,10 +38,12 @@ return require("packer").startup(function(use)
     end,
   })
   use("slim-template/vim-slim")
+  use("jwalton512/vim-blade")
+  use("rust-lang/rust.vim")
   use({
     "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
     requires = { "zbirenbaum/copilot.lua", "nvim-lua/plenary.nvim" },
-    tag = "canary",
     opts = { debug = true },
   })
 end)
