@@ -46,4 +46,7 @@ return require("packer").startup(function(use)
     requires = { "zbirenbaum/copilot.lua", "nvim-lua/plenary.nvim" },
     opts = { debug = true },
   })
+  use("jparise/vim-graphql")
+  use("hashivim/vim-terraform")
+  use("sitiom/nvim-numbertoggle")
 end)

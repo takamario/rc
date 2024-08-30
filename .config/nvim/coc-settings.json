@@ -1,8 +1,12 @@
 {
   "coc.preferences.formatOnSave": true,
   "diagnostic-languageserver.filetypes": { "dockerfile": "hadolint" },
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "eslint.autoFixOnSave": true,
   "Lua.diagnostics.globals": ["vim"],
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
   "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml",
   "stylua.styluaPath": "/opt/homebrew/bin/stylua",
   "tailwindCSS.custom.serverPath": "/opt/homebrew/bin/tailwindcss-language-server",
@@ -30,6 +34,18 @@
         "formatter": "auto"
       },
       "filetypes": ["ruby"]
+    },
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["typescript", "typescriptreact", "graphql"]
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
     }
   }
 }
