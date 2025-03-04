@@ -42,11 +42,32 @@ return require("packer").startup(function(use)
   use("rust-lang/rust.vim")
   use({
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
-    requires = { "zbirenbaum/copilot.lua", "nvim-lua/plenary.nvim" },
+    branch = "main",
+    requires = { { "zbirenbaum/copilot.lua" }, { "nvim-lua/plenary.nvim" } },
     opts = { debug = true },
   })
   use("jparise/vim-graphql")
   use("hashivim/vim-terraform")
   use("sitiom/nvim-numbertoggle")
+  use({
+    "yetone/avante.nvim",
+    config = function()
+      require("avante_lib").load()
+      require("avante").setup({
+        provider = "claude",
+        -- provider = "copilot",
+      })
+    end,
+    run = "make BUILD_FROM_SOURCE=true",
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      -- "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "HakonHarnes/img-clip.nvim",
+      "zbirenbaum/copilot.lua",
+      -- "MeanderingProgrammer/render-markdown.nvim",
+    },
+  })
 end)

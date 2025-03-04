@@ -55,3 +55,7 @@ if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/complet
 
 # Go
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"

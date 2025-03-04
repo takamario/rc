@@ -7,6 +7,7 @@
   "Lua.diagnostics.globals": ["vim"],
   "python.formatting.provider": "ruff",
   "python.linting.ruffEnabled": true,
+  "pyright.organizeimports.provider": "ruff",
   "rust-analyzer.check.command": "clippy",
   "stylua.configPath": "/Users/takamario/.config/stylua/stylua.toml",
   "stylua.styluaPath": "/opt/homebrew/bin/stylua",
