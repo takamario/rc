@@ -4,8 +4,6 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
   use({ "neoclide/coc.nvim", branch = "release" })
-  -- use { "williamboman/mason.nvim", run = ":MasonUpdate" }
-  -- use "williamboman/mason-lspconfig"
   use("nvim-tree/nvim-tree.lua")
   use("nvim-tree/nvim-web-devicons")
   use("EdenEast/nightfox.nvim")
@@ -44,6 +42,7 @@ return require("packer").startup(function(use)
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "main",
     requires = { { "zbirenbaum/copilot.lua" }, { "nvim-lua/plenary.nvim" } },
+    build = "make tiktoken",
     opts = { debug = true },
   })
   use("jparise/vim-graphql")
@@ -58,7 +57,7 @@ return require("packer").startup(function(use)
         -- provider = "copilot",
       })
     end,
-    run = "make BUILD_FROM_SOURCE=true",
+    run = "make",
     requires = {
       "nvim-treesitter/nvim-treesitter",
       -- "stevearc/dressing.nvim",
