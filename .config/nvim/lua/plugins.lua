@@ -54,7 +54,16 @@ return require("packer").startup(function(use)
       require("avante_lib").load()
       require("avante").setup({
         provider = "claude",
+        claude = {
+          model = "claude-sonnet-4-20250514",
+        },
         -- provider = "copilot",
+        -- copilot = {
+        --   -- model = "claude-4-sonnet",
+        --   -- model = "gpt-4.1",
+        --   -- model = "o4-mini",
+        --   model = "gemini-2.5-pro",
+        -- },
       })
     end,
     run = "make",
