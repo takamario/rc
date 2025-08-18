@@ -14,6 +14,7 @@
   lgg = log --abbrev-commit --relative-date --decorate --pretty --graph
   lgol = log --abbrev-commit --relative-date --decorate --pretty --oneline
   sw = switch
+  tree = worktree
 [color]
   ui = auto
 [push]
