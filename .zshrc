@@ -27,22 +27,6 @@ alias vimdiff='nvim -d'
 export LANG='en_US.utf-8'
 export CLOUDSDK_PYTHON=python3
 
-# rbenv
-eval "$(rbenv init -)"
-
-# pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
-# nodenv
-eval "$(nodenv init -)"
-
-# goenv
-export GOENV_ROOT=$HOME/.goenv
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-
 # git
 export GIT_EDITOR=nvim
 
@@ -59,3 +43,11 @@ export PATH=$PATH:$GOPATH/bin
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/takamario/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
