@@ -22,27 +22,3 @@ vim.keymap.set("n", "<leader>gc", builtin.git_commits, {})
 vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
 vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gr", builtin.lsp_references, {})
-
--- copilot
-function CopilotChatBuffer()
-  local input = vim.fn.input("Quick Chat: ")
-  if input ~= "" then
-    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
-  end
-end
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ccq",
-  "<cmd>lua CopilotChatBuffer()<cr>",
-  { noremap = true, silent = true, desc = "CopilotChat - Quick chat" }
-)
-function ShowCopilotChatActionPrompt()
-  local actions = require("CopilotChat.actions")
-  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-end
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ccp",
-  "<cmd>lua ShowCopilotChatActionPrompt()<cr>",
-  { noremap = true, silent = true, desc = "CopilotChat - Action prompt" }
-)
