@@ -1,43 +1,35 @@
 return {
   -- LSP
+  { "neovim/nvim-lspconfig" },
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+  { "WhoIsSethDaniel/mason-tool-installer.nvim" },
+
+  -- Completion
   {
-    "neoclide/coc.nvim",
-    branch = "release",
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+    },
+  },
+
+  -- Formatting
+  { "stevearc/conform.nvim" },
+
+  -- Linting
+  { "mfussenegger/nvim-lint" },
+
+  -- Autopairs (coc-pairs replacement)
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
     config = function()
-      vim.opt.backup = false
-      vim.opt.writebackup = false
-      vim.opt.updatetime = 300
-      vim.opt.signcolumn = "yes"
-      local keyset = vim.keymap.set
-      function _G.check_back_space()
-        local col = vim.fn.col(".") - 1
-        return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
-      end
-
-      local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-      keyset(
-        "i",
-        "<TAB>",
-        'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
-        opts
-      )
-      keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
-      keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
-      keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
-      keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
-      keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
-      keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
-      keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
-      keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
-      keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
-      keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
-      vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
-
-      -- coc-go: organize imports on save
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.go", "*.ts" },
-        command = "call CocAction('runCommand', 'editor.action.organizeImport')",
-      })
+      require("nvim-autopairs").setup({})
     end,
   },
 
@@ -153,12 +145,6 @@ return {
       require("nvim-surround").setup({})
     end,
   },
-
-  -- Linting / Formatting
-  -- {
-  --   "nvimtools/none-ls.nvim",
-  --   dependencies = { "nvim-lua/plenary.nvim" },
-  -- },
 
   -- Telescope
   {
@@ -281,7 +267,7 @@ return {
   {
     "rust-lang/rust.vim",
     init = function()
-      vim.g.rustfmt_autosave = 1
+      vim.g.rustfmt_autosave = 0
     end,
   },
   { "jparise/vim-graphql" },
@@ -289,6 +275,47 @@ return {
 
   -- Copilot
   { "github/copilot.vim" },
+
+  -- Keybinding help
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("which-key").setup({})
+    end,
+  },
+
+  -- Diagnostics list
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("trouble").setup({})
+      vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { silent = true })
+      vim.keymap.set("n", "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { silent = true })
+    end,
+  },
+
+  -- TODO comments
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("todo-comments").setup({
+        signs = false,
+        keywords = {
+          FIX  = { icon = "F ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+          TODO = { icon = "T ", color = "info" },
+          HACK = { icon = "H ", color = "warning" },
+          WARN = { icon = "W ", color = "warning", alt = { "WARNING", "XXX" } },
+          PERF = { icon = "P ", color = "default", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+          NOTE = { icon = "N ", color = "hint", alt = { "INFO" } },
+          TEST = { icon = "S ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        },
+      })
+      vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { silent = true })
+    end,
+  },
 
   -- Misc
   { "sitiom/nvim-numbertoggle" },

@@ -16,4 +16,5 @@ require("lazy").setup(require("plugins"), {
   rocks = { enabled = false },
 })
 require("core")
+require("lsp")
 require("keymaps")
