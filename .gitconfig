@@ -1,7 +1,7 @@
 [user]
   name = Shoei Takamaru
 [core]
-  editor = /usr/bin/vim
+  editor = nvim
   autocrlf = input
   pager = less -r
 [alias]
